@@ -6,12 +6,12 @@ mov ah,TYPE_OUT
 loop:
  cmp [bx],byte 0
  je exit
-   call print_char
+   call .print_char
    inc bx 
    jmp loop
 
 
-print_char:
+.print_char:
    mov al,[bx]
    int 0x10
    ret
