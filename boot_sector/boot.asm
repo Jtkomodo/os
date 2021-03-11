@@ -1,5 +1,5 @@
 [org 0x7c00]
-PROGRAM_SPACE equ 0x7e00;right after the boot sector
+PROGRAM_SPACE equ 0x8000;right after the boot sector
 
 ;setup stack
 mov bp,0x7c00

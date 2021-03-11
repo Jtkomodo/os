@@ -1,0 +1,1 @@
+del /f *.o,*.bin,*.flp,*.elf

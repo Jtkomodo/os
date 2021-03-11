@@ -5,7 +5,7 @@ DISK_READ equ 0x02
 Read_Disk:
   mov ah,DISK_READ
   mov bx,PROGRAM_SPACE
-  mov al,4;2048
+  mov al,64;2048
   mov dl,[BOOT_DISK]
   mov ch,0
   mov dh,0

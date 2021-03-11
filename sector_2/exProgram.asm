@@ -1,4 +1,3 @@
-[org 0x7e00]
 jmp Start
 ;includes
 %include "sector_2/gdt.asm"
@@ -36,7 +35,6 @@ START_PM:
    ;setup stack
    mov ebp,0x90000
    mov esp,ebp
-
    mov [VIDEO_MEMORY],byte 'H'
 
    ;detect long mode
@@ -49,16 +47,23 @@ START_PM:
    ;far jump to flush the pipeline again
    jmp codeseg:START_64
    jmp $
-[bits 64]   
+[bits 64]
+[extern _start]  
+[extern printString]
 START_64:
   
-
+ 
    mov edi,VIDEO_MEMORY
    mov rax,0x1f201f201f201f20
    mov ecx,500
    rep stosq
-
-
+   ;call _start
+   mov rdx,24
+   mov rsi,10
+   mov rdi,test_String
+   call printString
+   
  jmp $
-;padding
-times 2048 -($-$$) db 0
+
+test_String:
+ db "Jesse_talbot",0
