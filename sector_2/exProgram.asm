@@ -57,13 +57,18 @@ START_64:
    mov rax,0x1f201f201f201f20
    mov ecx,500
    rep stosq
-   ;call _start
-   mov rdx,24
-   mov rsi,10
-   mov rdi,test_String
-   call printString
+
+   ;call printString(char* string,int x,int y,unsigned char color);
+   xchg bx, bx 
    
+   call _start
+ 
+
+
+
  jmp $
 
 test_String:
  db "Jesse_talbot",0
+test_String2: 
+ db "Komodo_OS",0

@@ -1,16 +1,29 @@
 
-#include "IO.cpp"
-#include "print.cpp"
+#include "IO.h"
+#include "Cursor.h"
+
+
+
 extern "C" {
 
 void _start(){
-  int* p=(int*)0xb8000;
-  *p=0x0f690000;
+	// int i=0;
+    
+    enable_cursor(0,15);
+    update_cursor(0,5);
+    Write_string("Jesse Talbot",0x1e);
+
+    
+  
+
 
 }
 
 
- 
+
+
+
+
 
 
 }

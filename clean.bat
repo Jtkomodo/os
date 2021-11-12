@@ -1,1 +1,1 @@
-del /f *.o,*.bin,*.flp,*.elf
+del /f *.o,*.bin,*.flp,*.elf,*.bak

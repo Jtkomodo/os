@@ -8,7 +8,9 @@ INPUT
 (
       exProgram.o
       Kernel.o
-
+      Cursor.o
+      IO.o
+      Keyboard.o
 )
 
 OUTPUT(
@@ -26,6 +28,7 @@ SECTIONS{
 
         *(.text)
     }
+    
 
      .data :ALIGN(0x1000)
     {
